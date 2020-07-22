@@ -18,7 +18,7 @@ student.sayHi("jack");
 
 
 //类
-class Car {
+export class Car {
     engine:string;
     constructor(engine:string){
         this.engine = engine;

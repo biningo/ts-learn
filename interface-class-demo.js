@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var student = {
     firstName: "bingo",
     lastName: "biningo",
@@ -16,6 +18,7 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
+exports.Car = Car;
 var baoma = new Car("baoma");
 baoma.info();
 var HaBaDog = /** @class */ (function () {
