@@ -1,59 +1,70 @@
 /**
- * any
  * number
  * string
  * boolean
- * 数组
- * 元组
- * enum
- * void
+ *
+ * Array
+ * Tuple
+ * Enum
+ *
+ * UnKnown
+ * Any
+ * Void
  * null
  * underfined
- * nerver
+ * Nerver
+ *
+ * Object
  **/
-//1、any
-var x = 1;
-x = "1";
-x = {};
-var arr = [1, "1", 1.2];
-// //2、never
-// let xx: never;
-// let y: number;
-//
-// // 运行错误，数字类型不能转为 never 类型
-// x = 123;
-//
-// // 运行正确，never 类型可以赋值给 never类型
-// x = (()=>{ throw new Error('exception')})();
-//
-// // 运行正确，never 类型可以赋值给 数字类型
-// y = (()=>{ throw new Error('exception')})();
-//
-// // 返回值为 never 的函数可以是抛出异常的情况
-// function error(message: string): never {
-//     throw new Error(message);
-// }
-//3、string
-var username = "abc";
-//4、类型推断
-var num = 12;
-console.log(typeof num);
-var s = "bingo";
-console.log(typeof s);
-//5、变量作用域
-var g = 1;
-var Numbers = /** @class */ (function () {
-    function Numbers() {
-        this.num_val = 2;
-    }
-    Numbers.prototype.say = function () {
-        var val = 4;
-        console.log(val);
-    };
-    Numbers.val = 3;
-    return Numbers;
-}());
-console.log(g, Numbers.val);
-var obj = new Numbers();
-console.log(obj.num_val);
-obj.say();
+//1、Number
+var n = 1.2;
+console.log(n);
+//2、string
+var fullname = 'icepan';
+var age = 18;
+var info = "I'm " + fullname + "," + age + " years old";
+console.log(info);
+//3、Array Tuple
+var list = [1, 2, 3, 4];
+var x = ['icepan', 18]; //tuple
+console.log(x);
+//4、Enum
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 3] = "Green";
+    Color[Color["Blue"] = 4] = "Blue";
+})(Color || (Color = {}));
+var red = Color.Red;
+console.log(red, typeof red); //number
+var colorName = Color[4];
+console.log(colorName); //Blue
+//5、Unknow 动态绑定类型
+var notSure = 'a';
+notSure = 12;
+notSure = false;
+if (typeof notSure === 'boolean') {
+    var flag = notSure;
+    console.log(flag);
+}
+else if (typeof notSure === 'number') {
+    var num = notSure;
+}
+//6、null undefine
+var u = undefined;
+var nu = null;
+//7、Object|object
+function create(obj) {
+    console.log(obj);
+}
+// create(1); 报错
+// create("a"); 报错
+create({ name: "hi" });
+create(null);
+var Obj = 1;
+Obj = "a";
+//8、类型断言
+var sAny = "hi";
+var sLen = sAny.length; //方法1
+sLen = sAny.length; //方法2
+console.log(sLen);
