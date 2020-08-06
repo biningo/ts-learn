@@ -38,11 +38,30 @@ enum Color {
     Green=3,
     Blue
 }
+enum Enum {
+    A = 1,
+    B,
+    C = 2
+}
 let red:Color = Color.Red;
 console.log(red,typeof red); //number
 
 let colorName:string = Color[4];
 console.log(colorName); //Blue
+
+
+enum Direction {
+    Up="Up",
+    Down="Down",
+    Left="Left",
+    Right="Right"
+}
+let d:Direction = Direction.Up;
+console.log(d,typeof d); //string
+
+
+
+
 
 //-----------------------------5、Unknow 动态绑定类型
 let notSure:unknown = 'a';

@@ -35,10 +35,25 @@ var Color;
     Color[Color["Green"] = 3] = "Green";
     Color[Color["Blue"] = 4] = "Blue";
 })(Color || (Color = {}));
+var Enum;
+(function (Enum) {
+    Enum[Enum["A"] = 1] = "A";
+    Enum[Enum["B"] = 2] = "B";
+    Enum[Enum["C"] = 2] = "C";
+})(Enum || (Enum = {}));
 var red = Color.Red;
 console.log(red, typeof red); //number
 var colorName = Color[4];
 console.log(colorName); //Blue
+var Direction;
+(function (Direction) {
+    Direction["Up"] = "Up";
+    Direction["Down"] = "Down";
+    Direction["Left"] = "Left";
+    Direction["Right"] = "Right";
+})(Direction || (Direction = {}));
+var d = Direction.Up;
+console.log(d, typeof d); //string
 //-----------------------------5、Unknow 动态绑定类型
 var notSure = 'a';
 notSure = 12;
